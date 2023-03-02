@@ -15,13 +15,17 @@ const def = defineValuta(valuta, price);
   return (
   
     <>
-      
+      <div>
 <h1>{title}</h1>
 <p>{desc}</p>
  <>{valuta}: {def} </>
+ <div>
 <button onClick = {
 () => addProduct(Number(def))}>Buy</button>
+</div>
+</div>
     </>
+    
   )
 }
 

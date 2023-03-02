@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import ProductsArray from './productsArray'
 import ShopPageItem from './shopPageItem'
+import './shopPage.scss'
 type CountProps = {
 totalPrice: number
 
@@ -41,13 +42,14 @@ totalPrice: prevState.totalPrice + price
   return (
  <>
 
-     <h1>Our shop page{val}</h1>
-
+     <h1 className='title'>Our shop page</h1>
+<div className = 'changeValBtn'>
     <button onClick = {() => changeVal('USD')}>USD</button>
     <button onClick = {() => changeVal('EUR')}>EUR</button>
     <button onClick = {() => changeVal('UAH')}>UAH</button>
     <button onClick = {() => changeVal('ZLT')}>ZLT</button>
-    {totalCount.totalPrice}
+    </div>
+    <div className='productsWrap'>
    {
 ProductsArray.map(({title, desc, price}: productsProps) => (
  <>
@@ -56,10 +58,15 @@ ProductsArray.map(({title, desc, price}: productsProps) => (
 </>
 
    )
-    
+ 
   )
+ 
 }
 
+</div>
+<div>
+<p className = 'total'>total: {totalCount.totalPrice}</p>
+</div>
 </>
   )
 }
